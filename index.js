@@ -9,7 +9,7 @@ const app = express();
 // app.use(logger);
 
 // Handlebars Middleware
-app.engine('handlebars', exphbs({ defaultLayout: 'mail' }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Body Parser Middleware (now included with Express!)
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => res.render('index'));
 
 // Set a static folder
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // Members API routes
 app.use('/api/members', require('./routes/api/members'));
