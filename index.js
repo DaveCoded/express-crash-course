@@ -7,6 +7,10 @@ const app = express();
 // Init middleware
 // app.use(logger);
 
+// Body Parser Middleware (now included with Express!)
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 // Set a static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
